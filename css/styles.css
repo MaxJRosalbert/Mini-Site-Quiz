@@ -1,0 +1,379 @@
+/* Normalisation supplémentaire 
+============================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@use postcss-preset-env {stage: 0;}
+:root {
+    --color-background: #000119;
+    --stroke-width: calc(1em / 16);
+    --font-size: 15vmin;
+    --font-weight: 700;
+    --letter-spacing: calc(1em / 8);
+  }
+  
+/* Notez l'utilisation des sélecteurs additionnels pour les pseudo-éléments */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select:none;
+}
+
+/* Mise en page
+============================================================*/
+html {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    font-family: Poppins, sans-serif;
+    /* Ajustement de la taille des polices à la racine du document */
+    font-size: clamp(14px, 0.5rem + 0.5vw, 24px);
+    font-weight: bold;
+}
+
+body {
+    max-width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    background: radial-gradient(#480d35 ,#17151d);
+
+}
+
+.intro,
+.quiz,
+.resultat{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.commencerQuiz,
+.question{
+
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    min-height: 48px;
+    /* width: 80vw; */
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}    
+
+.commencerQuiz,
+.question:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    }
+
+.commencerQuiz,
+.question:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+    }
+
+.commencerQuiz,
+.question:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+    }
+
+
+footer{
+    background-color: rgba(255, 255, 255, 0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.toucheBtn{
+    cursor: pointer;
+}
+
+.animDebut{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+/* ================================== VERSION Acceuil ======================= */
+
+.intro header{
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+h1{
+    /* width: 80vw; */
+    background-clip: text;
+    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    color: var(--color-background);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    letter-spacing: var(--letter-spacing);
+    padding: calc(--stroke-width / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: var(--stroke-width);
+    text-align: center;
+}
+
+h2{
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    color: #f6d8d5;
+    background-image: radial-gradient( #f6d8d5);
+    font-size: 50px;
+    text-align: center;
+
+}
+
+/* ================================== VERSION Quiz ========================== */
+.quiz > header{
+    height: 35vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+}
+.noQuestion{
+    width: 100%;
+    height: 10vh;
+    background-color: #fe1d1d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-style: italic;
+}
+.barreDavancement{
+    width: 0vw;
+    height: 3vh;
+    background-color: whitesmoke;
+
+    position: absolute;
+    left: 0;
+    /* bottom: 0; */
+    top: 20vh;
+}
+
+
+
+.choixDeReponse{
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.choix{
+    background-color: #521616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question{
+    /* font-size: x-large; */
+}
+
+/* ================================= VERSION Résultat ======================= */
+
+
+.resultat > header{
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+.score{
+    height: 15vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.resultat > section {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bouton{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bouton > div{
+    width: 10vh;
+    height: 10vh;
+    background-color: #ae0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top{
+    height: 25vh;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.top > span{
+    align-items: flex-start;
+}
+
+.point,
+.temps{
+    /* width: 35vw; */
+    /* height: 9vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    color: white;
+}
+
+.point{
+    /* background-color: cadetblue; */
+}
+.temps{
+    /* background-color: red; */
+    
+}
+
+.messageResultat,
+.messageNbrePartie{
+    width: 75vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.messageResultat{
+    /* background-color: blue;  */
+    color: white;
+    text-align: center;
+}
+.messageNbrePartie{
+    color: white;
+    text-align: center;
+    /* background-color: aquamarine; */
+    
+}
+
+/* ================================== VERSION MOBILE ======================== */
+@media screen and (max-width:600px){
+    .choixDeReponse{
+        flex-direction: column;
+    }
+
+    .choix{
+        width: 80vw;
+        height: 5vh;
+    }
+    
+    footer{
+        width: 100vw;
+        height: 5vh;
+    }
+
+    .bouton > div{
+        width: 10vh;
+        height: 10vh;
+        border-radius: 50%;
+
+    }
+
+    .top{
+        width: 80vw;
+    }
+}
+
+/* ============================== VERSION Tablette / PC ===================== */
+@media screen and (min-width:600px){
+    .choixDeReponse{
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
+    
+    .choix{
+        width: 20vw;
+        height: 20vh;
+        border-radius: 50%;
+    }
+
+    footer{
+        width: 100vw;
+        height: 10vh;
+    }
+    .resultat > header{
+        align-items: center;
+    } 
+
+    .resultat > h1{
+        height: 15vh;
+    }
+
+    .score{
+        height: 15vh;
+        width: 50vw;
+        
+    }
+
+    .resultat > section{
+        width: 50vw;
+    }
+
+    .bouton > div{
+        width: 15vh;
+        height: 10vh;
+    }
+
+    .top{
+
+        width: 50vw;
+    }
+}

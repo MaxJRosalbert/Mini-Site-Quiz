@@ -1,0 +1,145 @@
+/* Animations de l'intro*/
+/* ========================================================================== */
+
+  
+/* ================================== VERSION MOBILE ======================== */
+
+
+/* ================================ VERSION ORDINATEUR ====================== */
+
+
+/* Animations de l'intro */
+/* ========================================================================== */
+.screen-gameboy-text {
+
+
+  font-family: 'Asap', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -2px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: skew(-5deg);
+  transform: skew(-5deg);
+  white-space: nowrap;
+  color: #3232fc;
+  background: -webkit-linear-gradient(0deg, #3232fc 40%, #85e367 40%, #85e367 45%, #ff52e8 45%, #ff52e8 50%, #ff0151 50%, #ff0151 55%, #f9e52e 55%, #f9e52e 60%, #e8e8e8 60%);
+  background-position: 130px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: screen-gameboy-text 3s infinite linear;
+  animation: screen-gameboy-text 3s /*forwards*/  linear;
+}
+@keyframes screen-gameboy-text {
+  0% {
+    color: #f9e52e;
+    background-position: -120px;
+    opacity: 0;
+  }
+  11.7% {
+    opacity: 0;
+  }
+  12% {
+    color: #f9e52e;
+    background-position: -120px;
+    opacity: 1;
+  }
+  19.5% {
+    color: #f9e52e;
+  }
+  21% {
+    color: #ff0151;
+  }
+  28.5% {
+    color: #ff0151;
+  }
+  30% {
+    color: #ff52e8;
+  }
+  37.5% {
+    color: #ff52e8;
+  }
+  39% {
+    color: #85e367;
+  }
+  46.5% {
+    color: #85e367;
+  }
+  48% {
+    color: #3232fc;
+  }
+  54% {
+    background-position: 130px;
+  }
+  81% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0;
+  }
+}
+
+/* Animations du quiz */
+/* ========================================================================== */
+.toucheAnime{
+    background: linear-gradient(45deg, #6969FF, #C669FF) ;
+}
+
+.toucheAnime:hover{
+  font-size: large;
+  cursor: pointer;
+  background: linear-gradient(45deg, #b312c2, #a3be0d) ;
+}
+
+@keyframes rotation {
+    to{ filter: rotation(90deg);}
+}
+
+@keyframes animer-reponse-succes {
+    from, 70%, to {
+        transform: translateY(0);
+    }
+
+    10%, 30%, 50% {
+        transform: translateY(-5%);
+    }
+
+    20%, 40%, 60% {
+        transform: translateY(5%);
+    }
+}
+
+@keyframes animer-reponse-echec {
+    from, 70%, to {
+        transform: translateX(0);
+    }
+
+    10%, 30%, 50% {
+        transform: translateX(-5%);
+    }
+
+    20%, 40%, 60% {
+        transform: translateX(5%);
+    }
+}
+
+/* [À compléter : étape 2a] */
+/* Compléter les deux règles de style suivantes pour "réponse bonne" et 
+"réponse eronnée" */
+.choixDeReponse > .reponseSucces {
+    /* Assosier l'animation adéquate (ci-dessus) */
+    animation-name: animer-reponse-succes;
+    animation-duration: 1s;
+    
+}
+
+.choixDeReponse > .reponseEchec {
+    /* Assosier l'animation adéquate (ci-dessus) */
+    animation-name: animer-reponse-echec;
+    animation-duration: 1s;
+    
+
+}
+
+

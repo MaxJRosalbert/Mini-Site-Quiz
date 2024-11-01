@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>TIM-2022 - TP2 - MJR</title>
+
+        <!-- Polices d'icônes utilisées-->
+    
+        <!-- Références aux CSS-->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/anim-Stylequiz.css">
+    </head>
+    <body>
+        <!-- Page D'animation du quiz -->
+        <main class="animDebut">
+            <div class="screen-gameboy-text">BIENVENUE AU QUIZ DE MAX</div>
+        </main>
+
+        <!-- Page d'introduction du quiz -->
+        <main class="intro">
+            <header>
+                <h1 class="titreQuiz ">Le Quiz de Max</h1>
+                <h2 class="themeQuiz">Special (Mythologie)</h2>
+            </header>
+            <div class="commencerQuiz toucheBtn">cliquez ici pour commencer</div>
+            <footer class="credit">TP 2 Animation et interactivité Web TIM hiver 2022</footer>
+        </main>
+
+        <!-- Page de question du quiz -->
+        <main class="quiz">
+            <header>
+                <div class="noQuestion"></div>
+                
+                <div class="question"></div>
+            </header>
+            
+            <div class="barreDavancement"></div>
+
+            <section>
+                <div class="choixDeReponse"></div>
+            </section>
+            <footer class="credit">TP 2 Animation et interactivité Web TIM hiver 2022</footer>
+        </main>
+
+        <!-- Page de résultat du quiz -->
+        <main class="resultat">
+            <header>
+                <h1 class="quizFini">Le quiz est fini</h1>
+
+                <div class="score">
+                   <div class="point"></div>
+                    <div class="temps"></div>
+                </div>
+                <div class="messageResultat"></div> 
+              
+
+            </header>
+            <section>
+                <div class="bouton">
+                    <div class="btnAcceuil toucheBtn">&#6675;</div>
+                    <div class="btnRecommencer toucheBtn">&#11148;</div>
+                </div>  
+                <div class="messageNbrePartie"></div> 
+                <div class="top"> Meilleur performances
+                    <span class="pointage"></span>
+                    
+
+                </div>
+            </section>
+        </main>
+        
+        <!-- Références aux SCRIPTS-->
+        <script src="JS/questionQuiz.js"></script>
+        <script src="JS/index.js"></script>
+    </body>
+</html>
